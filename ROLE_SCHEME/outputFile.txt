@@ -1,0 +1,198 @@
+1 : LOGIN admin pass
+Login successful
+
+2 : CREATE ROLE ROLEDepartment ABC
+Role created successfully
+
+3 : CREATE ROLE ROLEStudent BCD
+Role created successfully
+
+4 : CREATE ROLE ROLECourse EF
+Role created successfully
+
+5 : CREATE USER USER1 PASS1
+User created successfully
+
+6 : CREATE USER USER2 PASS2
+User created successfully
+
+7 : CREATE USER USER3 PASS3
+User created successfully
+
+8 : CREATE USER USER4 PASS4
+User created successfully
+
+9 : CREATE USER USER5 PASS5
+User created successfully
+
+10 : GRANT ROLE USER1 ROLEDepartment
+Role assigned successfully
+
+11 : GRANT ROLE USER2 ROLEStudent
+Role assigned successfully
+
+12 : GRANT ROLE USER3 ROLEStudent
+Role assigned successfully
+
+13 : GRANT ROLE USER4 ROLECourse
+Role assigned successfully
+
+14 : GRANT ROLE USER2 ROLEDepartment
+Role assigned successfully
+
+15 : GRANT ROLE USER2 ROLECourse
+Role assigned successfully
+
+16 : GRANT ROLE USER3 ROLEDepartment
+Role assigned successfully
+
+17 : GRANT PRIVILEGE INSERT TO ROLEDepartment ON Department
+Privilege granted successfully
+
+18 : GRANT PRIVILEGE INSERT TO ROLEStudent ON Student
+Privilege granted successfully
+
+19 : GRANT PRIVILEGE INSERT TO ROLECourse ON Course
+Privilege granted successfully
+
+20 : GRANT PRIVILEGE SELECT TO ROLECourse ON Department
+Privilege granted successfully
+
+21 : GRANT PRIVILEGE SELECT TO ROLECourse ON Student
+Privilege granted successfully
+
+22 : GRANT PRIVILEGE SELECT TO ROLEStudent ON Department
+Privilege granted successfully
+
+23 : GRANT PRIVILEGE SELECT TO ROLEDepartment ON Department
+Privilege granted successfully
+
+24 : GRANT PRIVILEGE SELECT TO ROLEStudent ON Student
+Privilege granted successfully
+
+25 : GRANT PRIVILEGE SELECT TO ROLECourse ON Course
+Privilege granted successfully
+
+26 : LOGIN USER1 PASS70
+Invalid login
+
+27 : LOGIN USERR PASS70
+Invalid login
+
+28 : LOGIN USER1 PASS1
+Login successful
+
+29 : CREATE ROLE ROLE1 5
+Authorization failure
+
+30 : CREATE USER USER70 PASS1
+Authorization failure
+
+31 : GRANT ROLE ROLEDepartment USER70
+Authorization failure
+
+32 : GRANT PRIVILEGE INSERT TO ROLE1 ON Department
+Authorization failure
+
+33 : INSERT INTO Department VALUES(DEPARTMENTONE,LOCATIONONE) ENCRYPT 2 ROLEDepartment
+Row inserted successfully
+
+34 : INSERT INTO Department VALUES(DEPARTMENTTWO,LOCATIONTWO) ENCRYPT 1 ROLEDepartment
+Row inserted successfully
+
+35 : LOGIN USER3 PASS3
+Login successful
+
+36 : SELECT * FROM Department
+DName, Location
+DEPARTMENTONE, LOCATIONONE
+DEPARTMENTTWO, LOCATIONTWO
+
+37 : INSERT INTO Student VALUES(STUDENTONE,LEVELONE) ENCRYPT 2 ROLEStudent
+Row inserted successfully
+
+38 : INSERT INTO Department VALUES(DEPARTMENTTHREE,LOCATIONTHREE) ENCRYPT 0 ROLEDepartment
+Row inserted successfully
+
+39 : LOGIN USER2 PASS2
+Login successful
+
+40 : SELECT * FROM Department
+DName, Location
+DEPARTMENTTHREE, LOCATIONTHREE
+DEPARTMENTONE, LOCATIONONE
+DEPARTMENTTWO, LOCATIONTWO
+
+41 : SELECT * FROM Student
+SName, SLevel
+STUDENTONE, LEVELONE
+
+42 : INSERT INTO Course VALUES(COURSEONE,DEPARTMENTONE,DESCONE,BOOKONE) ENCRYPT 3 ROLECourse
+Row inserted successfully
+
+43 : INSERT INTO Department VALUES(DEPARTMENTFOUR,LOCATIONFOUR) ENCRYPT 2 ROLEDepartment
+Row inserted successfully
+
+44 : INSERT INTO Student VALUES(STUDENTTWO,LEVELTWO) ENCRYPT 2 ROLEStudent
+Row inserted successfully
+
+45 : INSERT INTO Course VALUES(COURSETHREE,DEPARTMENTTHREE,DESCTHREE,BOOKTHREE) ENCRYPT 2 ROLECourse
+Row inserted successfully
+
+46 : LOGIN USER4 PASS4
+Login successful
+
+47 : SELECT * FROM Course
+CName, DName, CDesc, MainTextBook
+COURSEONE, DEPARTMENTONE, DESCONE, BOOKONE
+COURSETHREE, DEPARTMENTTHREE, DESCTHREE, BOOKTHREE
+
+48 : SELECT * FROM Department
+DName, Location
+DEPARTMENTTHREE, LOCATIONTHREE
+DEPARTMENTFOUR, LPEAUKOOHOVT
+DEPARTMENTONE, LPEAUKOOQNF
+DFRASVMFPTUYO, LOCATIONTWO
+
+49 : SELECT * FROM Student
+SName, SLevel
+STUDENTONE, MGYFNROG
+STUDENTTWO, MGYFNWXQ
+
+50 : LOGIN USER1 PASS1
+Login successful
+
+51 : INSERT INTO Student VALUES(STUDENTTHREE,LEVELTHREE) ENCRYPT 0 ROLEDepartment
+Authorization failure
+
+52 : INSERT INTO Course VALUES(COURSETWO,DEPARTMENTONE,DESCTWO,BOOKTWO) ENCRYPT 0 ROLEDepartment
+Authorization failure
+
+53 : SELECT * FROM Student
+Authorization failure
+
+54 : SELECT * FROM Course
+Authorization failure
+
+55 : LOGIN USER3 PASS3
+Login successful
+
+56 : SELECT * FROM Course
+Authorization failure
+
+57 : REVOKE PRIVILEGE SELECT FROM ROLECourse ON Department
+Authorization failure
+
+58 : LOGIN admin pass
+Login successful
+
+59 : REVOKE PRIVILEGE SELECT FROM ROLECourse ON Department
+Privilege revoked successfully
+
+60 : LOGIN USER4 PASS4
+Login successful
+
+61 : SELECT * FROM Department
+Authorization failure
+
+62 : QUIT
