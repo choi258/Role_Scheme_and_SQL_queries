@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Project4 {
+public class Role {
 
     Connection con;
     int roleNum = 2;
@@ -14,7 +14,7 @@ public class Project4 {
     int privNum = 3;
     static String curr_user;
     static int line_num = 1;
-    public Project4() {
+    public Role() {
         try {
             Class.forName( "oracle.jdbc.driver.OracleDriver" );
         }
@@ -449,7 +449,7 @@ public class Project4 {
         return rs;
     }
     public static void main(String[] args) {
-        Project4 sdb = new Project4();
+        Role sdb = new Role();
         String readFile = args[0];
         String writeFile = args[1];
         String[] parts;
